@@ -109,19 +109,14 @@ async def play_next(ctx):
     url = queues[guild_id][0]
 
     ydl_opts = {
-    "format": "bestaudio/best",
-    "quiet": True,
-    "default_search": "ytsearch",
-    "noplaylist": False,
-    "extractor_args": {
-        "youtube": {
-            "player_client": ["android", "web"]
+        "format": "bestaudio/best",
+        "quiet": True,
+        "extractor_args": {
+            "youtube": {
+                "player_client": ["android", "web"]
+            }
         }
-    },
-    "http_headers": {
-        "User-Agent": "Mozilla/5.0"
     }
-}
 
     ffmpeg_opts = {
         'executable': FFMPEG_PATH,
